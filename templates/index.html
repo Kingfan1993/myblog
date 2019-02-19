@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
-{% block main %}
-    <div class="container" id='article_list'>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="article-list">
+
+{% block article_list %}
+    <div class="article-list">
                 {% for article in article_list %}
                     <!-- 文章 开始-->
                     <div class="article">
                         <div class="media">
                             <h3 class="media-heading"><a href="/article/{{ article.id }}/">{{ article.title }}</a></h3>
+                            <hr>
                             <div class="media-left">
                                 <a href="#">
                                     <img class="media-object author-avatar" src="/media/{{ article.user.avatar }}"
@@ -16,11 +15,12 @@
                                 </a>
                             </div>
                             <div class="media-body">
-                                <div class="article-desc">
+                                <div class="article-desc" style="height: 80px">
                                     {{ article.desc }}
                                 </div>
-                                <div class="article-footer">
 
+                                <div class="article-footer">
+                                    <hr>
                                     <span>发布于&nbsp;{{ article.create_time|date:'Y-m-d H:i:s' }}</span>
                                     {#                                    <span class="glyphicon glyphicon-comment">评论({{ article.comment_set.all.count }})</span>#}
                                     {#                                    <span class="glyphicon glyphicon-thumbs-up">点赞({{ article.articleupdown_set.all.count }})</span>#}
@@ -34,11 +34,4 @@
                     <!-- 文章 结束-->
                 {% endfor %}
             </div>
-        </div>
-    <div class="float-right">
-             {{ page_html|safe }}
-    </div>
-    </div>
-
-</div>
 {% endblock %}

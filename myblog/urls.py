@@ -23,7 +23,8 @@ urlpatterns = [
     url(r'^index/$', Index.as_view()),
     url(r'^media/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}),
     url(r'^blog/(category|tag|)/(.*)/$',QueryView.as_view()),
-    url(r'^article/(\d+)/',ArticleContent.as_view())
+    url(r'^article/(\d+)/',ArticleContent.as_view()),
+    url(r'^test/',test)
 
     
     

@@ -64,3 +64,7 @@ class ArticleContent(views.View):
 
 
         return render(request,'ariticlecontent.html',locals())
+
+
+def test(reqeust):
+    return render(reqeust,'base.html')
