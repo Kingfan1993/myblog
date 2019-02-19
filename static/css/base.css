@@ -1,0 +1,59 @@
+
+#left_menu{
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    left: 80px;
+    width: 300px;
+}
+#right_menu{
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    right: 80px;
+    width: 300px;
+}
+#msg{
+    padding: 0;
+}
+#lianjie{
+    padding: 0;
+}
+
+.row{
+    padding: 0;
+    margin: 0;
+}
+
+
+#article_list{
+    top: 80px;
+    width: 1000px;
+}
+.author-avatar {
+    height: 80px;
+    width: 80px;
+}
+
+/*博客首页样式区*/
+.article {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: #9d9d9d solid 1px;
+    background: white;
+    box-shadow: rgba(0,0,0,0.1);
+}
+.author-avatar {
+    height: 80px;
+    width: 80px;
+}
+.article-footer {
+    margin-top: 5px;
+}
+.article-footer span {
+    margin-right: 15px;
+}
+.article-footer span:first-child {
+    margin-right: 5px;
+}
+

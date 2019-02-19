@@ -1,0 +1,4 @@
+Django==1.11.16
+numpy==1.16.1
+PyMySQL==0.9.3
+pytz==2018.9

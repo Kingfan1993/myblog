@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{{ user_obj.username }}的博客</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("https://www.cnblog.io/img/bg-img.png");
+            min-width: 800px;
+        }
+        .bottom-nav{
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+{#导航条开始#}
+
+<nav class="navbar navbar-default" id="nav_bar">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index">首页</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="#">资源 <span class="sr-only"></span></a></li>
+                <li><a href="#">联系</a></li>
+
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+{#导航条结束#}
+
+
+{#左菜单#}
+<div class=" container" id="left_menu">
+    <div class="row">
+        <div class="col-md-12  panel panel-default " style="align-content: center;padding: 30px">
+            <div>
+                <img src="/media/avatars/cr.png" alt=""
+                     style="height: 150px;width: 150px;border-radius: 50%;margin-left: 40px;">
+            </div>
+            <div style="text-align: center">
+                <h2>King FAN</h2>
+            </div>
+            <div style="text-align: center">
+                <span style="font-size: 16px">来自湖南常德的野生程序员</span>
+            </div>
+            <div style="font-size: 20px;text-align: center">
+                <a class="label label-default" href="http://sighttp.qq.com/msgrd?v=1&uin=346775206"
+                   target="_blank"><i class="fa fa-qq" aria-hidden="true">QQ</i></a>
+                <a class="label label-primary" href="/media/avatars/微信二维码.png" target="_blank"><i class="fa fa-weixin"
+                                                                                                 aria-hidden="true">微信</i></a>
+                <a class="label label-success">邮箱</a>
+                <a class="label label-info" target="_blank" href="https://www.cnblogs.com/Kingfan1993/"><i
+                        class="fa fa-rss-square" aria-hidden="true">博客园</i></a>
+            </div>
+        </div>
+
+        <div class="col-md-12 " id="msg">
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-comment" aria-hidden="true">公告:</i></div>
+                <div class="panel-body">
+                    暂无内容
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 " id="lianjie">
+            <div class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-comment" aria-hidden="true">友情链接:</i></div>
+                <div class="panel-body">
+                    暂无内容
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{#左菜单结束#}
+
+{#文章列表开始#}
+{% block main %}
+
+{% endblock %}
+{#文章列表结束#}
+
+
+<div  style="text-align: center">
+<p>粤ICP备19009398号</p>
+
+</div>
+{#右侧栏开始#}
+<div id="right_menu" class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            {#文章分类开始#}
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-th-large" aria-hidden="true">&nbsp;&nbsp;&nbsp;文章分类</i></h3>
+                </div>
+                <div class="panel-body">
+                    {% for category in category_list %}
+                        <p>
+                            <a href="/blog/category/{{ category.title }}/"><i class="fa fa-bookmark"
+                                                                                             aria-hidden="true">&nbsp;&nbsp;&nbsp;{{ category.title }}({{ category.article_set.all.count }})</i></a>
+                        </p>
+                    {% endfor %}
+                </div>
+            </div>
+            {#文章分类结束#}
+
+
+            {#文章标签开始#}
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-tags" aria-hidden="true">&nbsp;&nbsp;&nbsp;文章标签</i></h3>
+                </div>
+                <div class="panel-body">
+                    {% for tag in tag_list %}
+                        <p>
+                            <a href="/blog/tag/{{ tag.title }}/"><i class="fa fa-tag" aria-hidden="true">&nbsp;&nbsp;&nbsp;{{ tag.title }}({{ tag.article_set.all.count }})</i></a>
+                        </p>
+                    {% endfor %}
+                </div>
+            </div>
+            {#文章标签结束#}
+
+            {#        最近更新开始#}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-fire" aria-hidden="true">&nbsp;&nbsp;&nbsp;最近更新</i></h3>
+                </div>
+                <div class="panel-body">
+                    {% for article in article_recent %}
+                        <p>
+                            <a href="/blog/tag/{{ article.title }}/">{{ article.title }}</a>
+                        </p>
+                    {% endfor %}
+                </div>
+            </div>
+            {#        最近更新结束#}
+
+        </div>
+    </div>
+
+
+</div>
+{#右侧栏结束#}
+
+
+
+<div id="top_btn" style="position: fixed;bottom: 10px;right: 10px">
+    <a href="#" class="btn btn-success">返回顶部</a>
+</div>
+</body>
+</html>
