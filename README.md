@@ -1,2 +1,0 @@
-# mybloh
-django+bootstrap
