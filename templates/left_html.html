@@ -1,4 +1,4 @@
-<div class="col-md-2 col-lg-4 col-xs-12">
+
             {#            左边栏开始#}
             <div class="left_menu_list">
                 <div class="author-msg">
@@ -6,18 +6,18 @@
                         <div class="panel-heading">博主</div>
                         <div class="panel-body">
                             <div>
-                                <img src="/media/avatars/cr.png" alt="..." class="img-rounded">
+                                <img src="/media/{{ user.avatar }}" alt="..." class="img-rounded" style="height: 150px;width: 150px">
                             </div>
-                            <h3>King Fan</h3>
+                            <h3>{{ user.name }}</h3>
                             <hr>
                             <div>
-                                <div class="alert alert-dismissable" role="alert">半路出道的程序员,目前专注Python</div>
+                                <div class="alert alert-dismissable" role="alert">{{ user.desc }}</div>
                             </div>
                             <div class="icon-list">
-                                <span class="label label-default">QQ</span>
-                                <span class="label label-primary">Wechat</span>
-                                <span class="label label-success">blog</span>
-                                <span class="label label-info">emai</span>
+                                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=346775206&site=qq&menu=yes"><span class="label label-primary"><i class="fa fa-qq" aria-hidden="true"></i>&nbsp;QQ</span></a>
+                                <a target="_blank" href="/media/avatars/微信二维码.png"><span class="label label-primary"><i class="fa fa-weixin" aria-hidden="true"></i>&nbsp;微信</span></a>
+                                <a target="_blank" href="https://www.cnblogs.com/Kingfan1993/"><span class="label label-success"><i class="fa fa-rss-square" aria-hidden="true"></i>&nbsp;blog</span></a>
+
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
 
                 <div class="article-category-menu">
                     <div class="panel panel-default">
-                        <div class="panel-heading">文章分类</div>
+                        <div class="panel-heading"><i class="fa fa-th-large" aria-hidden="true"></i>&nbsp;文章分类</div>
                         <div class="panel-body">
                             {% for category in category_list %}
                                 <p>
@@ -39,7 +39,7 @@
 
                 <div class="article-tag-menu">
                     <div class="panel panel-default">
-                        <div class="panel-heading">文章标签</div>
+                        <div class="panel-heading"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;文章标签</div>
                         <div class="panel-body">
                             {% for tag in tag_list %}
                                 <p>
@@ -52,7 +52,7 @@
 
                 <div class="recent-article-menu">
                     <div class="panel panel-default">
-                        <div class="panel-heading">最近更新</div>
+                        <div class="panel-heading"><i class="fa fa-fire" aria-hidden="true"></i>&nbsp;最近更新</div>
                         <div class="panel-body">
                             {% for article in article_recent %}
                                 <p>
@@ -73,4 +73,6 @@
 
             </div>
             {#左边栏结束#}
-        </div>
+
+
+

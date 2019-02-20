@@ -7,6 +7,11 @@
                     <div class="article">
                         <div class="media">
                             <h3 class="media-heading"><a href="/article/{{ article.id }}/">{{ article.title }}</a></h3>
+                            <span class="label label-default"><i class="fa fa-calendar" aria-hidden="true">&nbsp;{{ article.create_time }}</i></span>&nbsp;
+                            {% for tag in article.tags.all %}
+                            <span class="label label-default">{{ tag }}</span>&nbsp;
+                            {% endfor %}
+
                             <hr>
                             <div class="media-left">
                                 <a href="#">
@@ -21,7 +26,7 @@
 
                                 <div class="article-footer">
                                     <hr>
-                                    <span>发布于&nbsp;{{ article.create_time|date:'Y-m' }}</span>
+
                                     {#                                    <span class="glyphicon glyphicon-comment">评论({{ article.comment_set.all.count }})</span>#}
                                     {#                                    <span class="glyphicon glyphicon-thumbs-up">点赞({{ article.articleupdown_set.all.count }})</span>#}
 

@@ -5,9 +5,14 @@
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h1 class="panel-title">{{ article.title }}</h1>
+            <div style="display: flex;justify-content: space-between">
+                <h1 class="panel-title">{{ article.title }}</h1>
+                <a href="/admin/blog/article/{{ article.id }}/change/" class="label label-primary"><i class="fa fa-pencil-square-o" aria-hidden="true">编辑</i></a>
+            </div>
+
+
         </div>
-        <div class="panel-body">
+        <div class="panel-body article_content">
             {{ article.content|safe }}
         </div>
     </div>

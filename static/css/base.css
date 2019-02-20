@@ -16,8 +16,9 @@ body{
     background-color: white;
     padding: 20px;
 }
-.panel-body img{
-
+.article_content img{
+   max-width: 100%;
+    height: auto;
 }
 
 
@@ -27,5 +28,5 @@ body{
     text-align: center;
 }
 .icon-list{
-    font-size: 25px;
+    font-size: 20px;
 }

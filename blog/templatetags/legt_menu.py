@@ -8,7 +8,7 @@ from blog.models import *
 
 @register.inclusion_tag('left_html.html')
 def left_tage():
-
+    user = User.objects.get(id=1)
     category_list = Category.objects.all()
     article_list = Article.objects.all().order_by('-create_time')
     tag_list = Tag.objects.all()
