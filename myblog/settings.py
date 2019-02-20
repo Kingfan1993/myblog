@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',
+        'NAME': 'blog2',
         'USER':'root',
         'PASSWORD':'123',
         'PORT':3306,
@@ -131,7 +131,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-AUTH_USER_MODEL = 'blog.UserInfo'
+
 
 # 用户上传的文件配置
 MEDIA_URL = '/media/'

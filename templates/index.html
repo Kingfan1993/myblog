@@ -10,22 +10,21 @@
                             <hr>
                             <div class="media-left">
                                 <a href="#">
-                                    <img class="media-object author-avatar" src="/media/{{ article.article_img }}"
+                                    <img class="media-object author-avatar" src="/media/{{ article.avatar }}"
                                          alt="">
                                 </a>
                             </div>
                             <div class="media-body">
                                 <div class="article-desc" style="height: 80px">
-                                    {{ article.desc }}
+                                    <span style="color: #5e5e5e">{{ article.desc|default:'暂无描叙' }}</span>
                                 </div>
 
                                 <div class="article-footer">
                                     <hr>
-                                    <span>发布于&nbsp;{{ article.create_time|date:'Y-m-d H:i:s' }}</span>
+                                    <span>发布于&nbsp;{{ article.create_time|date:'Y-m' }}</span>
                                     {#                                    <span class="glyphicon glyphicon-comment">评论({{ article.comment_set.all.count }})</span>#}
                                     {#                                    <span class="glyphicon glyphicon-thumbs-up">点赞({{ article.articleupdown_set.all.count }})</span>#}
-                                    <span class="glyphicon glyphicon-comment">评论({{ article.comment_count }})</span>
-                                    <span class="glyphicon glyphicon-thumbs-up">点赞({{ article.up_count }})</span>
+
                                 </div>
                             </div>
                         </div>

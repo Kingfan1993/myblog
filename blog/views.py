@@ -22,7 +22,8 @@ class QueryView(views.View):
             return HttpResponse(404)
         article_list = []
         if condition == condition_list[0]:
-            article_list = Article.objects.filter(category__title=query)
+
+            article_list = Article.objects.filter(categorys__title=query)
         elif condition == condition_list[1]:
             article_list = Article.objects.filter(tags__title=query)
         elif not article_list:
@@ -46,10 +47,11 @@ class ArticleContent(views.View):
         return render(request,'ariticlecontent.html',locals())
 
 
-def test(request):
-    if request.method=='POST':
-        print(request.POST,request.GET)
-    return render(request,'editor.html')
+
+
+
+
+
 
 from myblog import settings
 import os
