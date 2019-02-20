@@ -82,10 +82,12 @@ class Article(models.Model):
     category = models.ForeignKey(to="Category", null=True, blank=True)  # 文章分类
     user = models.ForeignKey(to="UserInfo")  # 作者
     tags = models.ManyToManyField(  # 文章的标签
+
         to="Tag",
         through="Article2Tag",
         through_fields=("article", "tag"),
     )
+    article_img = models.FileField(upload_to="articleimg/", default="articleimg/default.png")  # 头像
 
     # 评论数
     comment_count = models.IntegerField(default=0)

@@ -1,0 +1,76 @@
+<div class="col-md-4 col-lg-4 col-xs-12">
+            {#            左边栏开始#}
+            <div class="left_menu_list">
+                <div class="author-msg">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">博主</div>
+                        <div class="panel-body">
+                            <div>
+                                <img src="/media/avatars/cr.png" alt="..." class="img-rounded">
+                            </div>
+                            <h3>King Fan</h3>
+                            <hr>
+                            <div>
+                                <div class="alert alert-dismissable" role="alert">半路出道的程序员,目前专注Python</div>
+                            </div>
+                            <div class="icon-list">
+                                <span class="label label-default">QQ</span>
+                                <span class="label label-primary">Wechat</span>
+                                <span class="label label-success">blog</span>
+                                <span class="label label-info">emai</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-category-menu">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">文章分类</div>
+                        <div class="panel-body">
+                            {% for category in category_list %}
+                                <p>
+                                    <a href="/blog/category/{{ category.title }}/"><i class="fa fa-bookmark"
+                                                                                      aria-hidden="true">&nbsp;&nbsp;&nbsp;{{ category.title }}({{ category.article_set.all.count }})</i></a>
+                                </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-tag-menu">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">文章标签</div>
+                        <div class="panel-body">
+                            {% for tag in tag_list %}
+                                <p>
+                                    <a href="/blog/tag/{{ tag.title }}/"><i class="fa fa-tag" aria-hidden="true">&nbsp;&nbsp;&nbsp;{{ tag.title }}({{ tag.article_set.all.count }})</i></a>
+                                </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-article-menu">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">最近更新</div>
+                        <div class="panel-body">
+                            {% for article in article_recent %}
+                                <p>
+                                    <a href="/article/{{ article.id }}/">{{ article.title }}</a>
+                                </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="a-menu">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">友情链接</div>
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {#左边栏结束#}
+        </div>

@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 
-{% block article_list%}
+{% block article_list %}
 
-<div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h1 class="panel-title">{{ article.title }}</h1>
-                    </div>
-                    <div class="panel-body">
-                        {{ article.articledetail.content|safe }}
-                    </div>
-                </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">{{ article.title }}</h1>
+        </div>
+        <div class="panel-body">
+            {{ article.articledetail.content|safe }}
+        </div>
+    </div>
 
 {% endblock %}
 
